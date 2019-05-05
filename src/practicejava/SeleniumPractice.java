@@ -37,6 +37,8 @@ public class SeleniumPractice {
 	
 	System.out.println ("Screenshot captured while opening google page");
 	
+	System.out.println ("driver title capture :" + driver.getTitle()) ;
+	
 	}
 	
 	@Test (priority = 2 ,description = "search of testing ",enabled = true)
