@@ -6,16 +6,22 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.apache.tools.ant.util.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.io.FileHandler;
+import java.io.FileInputStream;
 
 //import com.aventstack.extentreports.ExtentReports;
 //import com.aventstack.extentreports.ExtentTest;
 //import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.google.common.io.Files;
+
+
 public class Reusablefunctions {
 	
 	//public static ExtentReports report;
@@ -76,4 +82,46 @@ public class Reusablefunctions {
 		
 		return screenshotpath ;
 		}
-}
+		
+		
+		
+		
+		//method to get the sheetname , rownumber, columnnumber from excel sheet 
+	     @SuppressWarnings("unused")
+		public static String getData (String filepath,int sheetname , int rownumber , int columnnumber) 
+	     {
+	    	
+	        File src = new File (filepath);
+	         // Create Workbook to read the whole excel 
+	       XSSFWorkbook wb = null;
+		try {
+			wb = new XSSFWorkbook(src);
+		} catch (InvalidFormatException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	       //now load the sheet name which to read 
+	       //getSheetAt method it retrieves the first Sheet 
+	       XSSFSheet sh1 = wb.getSheetAt(sheetname);
+	       // it will retrieve the total number of rows 
+	    	sh1 = wb.getSheetAt(sheetname) ;
+	    	//int rowcount = sh1.getLastRowNum();
+	    	int rowcount = sh1.getPhysicalNumberOfRows();
+	       System.out.println("total number of rows is " + rowcount);
+	       
+	    	for (int i = 0 ; i < rowcount ; i++) {
+	    	String datastore = sh1.getRow(rownumber).getCell(columnnumber).getStringCellValue() ;
+	    	return datastore ;
+	             }
+		return filepath;
+	    	
+	
+	                 } 
+		}
+
+
+
+

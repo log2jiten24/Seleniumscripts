@@ -3,13 +3,13 @@
 <suite thread-count="-1" guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="practicejava.Calendarcode">
+      <class name="ocrdemo.Readcaptcha">
         <methods>
-          <include name="closebrowser"/>
-          <include name="verifycalendar"/>
+          <include name="close"/>
+          <include name="login_irctc"/>
           <include name="launchbrowser"/>
         </methods>
-      </class> <!-- practicejava.Calendarcode -->
+      </class> <!-- ocrdemo.Readcaptcha -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

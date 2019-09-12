@@ -33,5 +33,7 @@
 	<classpathentry kind="lib" path="C:/Users/ACER/.m2/repository/com/beust/jcommander/1.72/jcommander-1.72.jar"/>
 	<classpathentry kind="lib" path="C:/Users/ACER/.m2/repository/com/beust/jcommander/1.72/jcommander-1.72-sources.jar"/>
 	<classpathentry kind="lib" path="E:/jar files_selenium/Flash.jar"/>
+	<classpathentry kind="lib" path="E:/jar files_selenium/tess4j-4.2.1.jar"/>
+	<classpathentry kind="lib" path="E:/jar files_selenium/tess4j-4.2.1-sources.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
